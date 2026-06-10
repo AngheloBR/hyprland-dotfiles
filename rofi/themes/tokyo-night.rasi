@@ -1,0 +1,85 @@
+/* Tokyo Night theme for Rofi */
+
+* {
+  bg:         #1a1b26;
+  bg-alt:     #16161e;
+  bg-hl:      #292e42;
+  border:     #7aa2f7;
+  fg:         #c0caf5;
+  fg-dim:     #565f89;
+  blue:       #7aa2f7;
+  purple:     #bb9af7;
+  green:      #9ece6a;
+  red:        #f7768e;
+  yellow:     #e0af68;
+
+  background-color:   transparent;
+  text-color:         @fg;
+  font:               "JetBrainsMono Nerd Font 12";
+}
+
+window {
+  width: 520px;
+  background-color: @bg;
+  border: 1px solid @border;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+mainbox {
+  background-color: transparent;
+  spacing: 8px;
+}
+
+inputbar {
+  background-color: @bg-alt;
+  border-radius: 8px;
+  padding: 8px 12px;
+  spacing: 8px;
+  children: [ prompt, entry ];
+}
+
+prompt {
+  background-color: transparent;
+  text-color: @blue;
+  font: "JetBrainsMono Nerd Font Bold 12";
+}
+
+entry {
+  background-color: transparent;
+  text-color: @fg;
+  placeholder: "buscar...";
+  placeholder-color: @fg-dim;
+}
+
+listview {
+  background-color: transparent;
+  lines: 8;
+  columns: 1;
+  spacing: 4px;
+  scrollbar: false;
+}
+
+element {
+  background-color: transparent;
+  border-radius: 6px;
+  padding: 6px 10px;
+  spacing: 10px;
+  children: [ element-icon, element-text ];
+}
+
+element selected {
+  background-color: @bg-hl;
+  text-color: @blue;
+}
+
+element-icon {
+  size: 24px;
+  background-color: transparent;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  vertical-align: 0.5;
+}

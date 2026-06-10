@@ -1,0 +1,16 @@
+# OS
+.DS_Store
+*.swp
+*.swo
+
+# Cache
+__pycache__/
+*.pyc
+
+# Sensibles
+*.key
+*.pem
+.env
+
+# Generados por matugen
+colors.css

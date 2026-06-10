@@ -1,0 +1,17 @@
+/* gtk/gtk.css – Tokyo Night minimal */
+* {
+  outline: none;
+}
+window {
+  background-color: #1a1b26;
+  color: #c0caf5;
+}
+button {
+  background: #292e42;
+  color: #c0caf5;
+  border-radius: 6px;
+  border: 1px solid #1a1b26;
+}
+button:hover {
+  background: #3d59a1;
+}

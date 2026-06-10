@@ -1,0 +1,115 @@
+// waybar/config.jsonc – Anghelo / Tokyo Night
+{
+  "layer": "top",
+  "position": "top",
+  "height": 36,
+  "spacing": 4,
+  "margin-top": 6,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "cpu",
+    "memory",
+    "battery",
+    "tray",
+    "custom/logout"
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "1": "󰲡",
+      "2": "󰲣",
+      "3": "󰲥",
+      "4": "󰲧",
+      "5": "󰲩",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5]
+    }
+  },
+
+  "hyprland/window": {
+    "format": "  {}",
+    "max-length": 40,
+    "separate-outputs": true
+  },
+
+  "clock": {
+    "format": "󰃰  {:%H:%M}",
+    "format-alt": "  {:%a %d %b}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "on-click": "mode"
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": "󰻠  {usage}%",
+    "tooltip": false,
+    "on-click": "ghostty -e btop"
+  },
+
+  "memory": {
+    "interval": 5,
+    "format": "󰍛  {percentage}%",
+    "tooltip-format": "{used:0.1f}GiB / {total:0.1f}GiB",
+    "on-click": "ghostty -e btop"
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󰂄  {capacity}%",
+    "format-icons": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
+  },
+
+  "network": {
+    "format-wifi": "󰤨  {essid}",
+    "format-ethernet": "󰈀  {ipaddr}",
+    "format-disconnected": "󰤭  off",
+    "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n{gwaddr} via {essid}",
+    "on-click": "ghostty -e nmtui"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰖁  muted",
+    "format-icons": {
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+  },
+
+  "tray": {
+    "spacing": 10,
+    "icon-size": 16
+  },
+
+  "custom/logout": {
+    "format": "󰗼",
+    "tooltip": "Logout menu",
+    "on-click": "wlogout"
+  }
+}
